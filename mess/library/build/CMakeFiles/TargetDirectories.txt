@@ -1,4 +1,0 @@
-/Users/TranCuong/Projects/mess/library/build/CMakeFiles/rebuild_cache.dir
-/Users/TranCuong/Projects/mess/library/build/CMakeFiles/edit_cache.dir
-/Users/TranCuong/Projects/mess/library/build/CMakeFiles/library.dir
-/Users/TranCuong/Projects/mess/library/build/CMakeFiles/tool-help.dir
