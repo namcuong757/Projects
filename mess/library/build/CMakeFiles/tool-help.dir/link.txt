@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libtool-help.a CMakeFiles/tool-help.dir/adding.cpp.o CMakeFiles/tool-help.dir/checkOutnIn.cpp.o CMakeFiles/tool-help.dir/data.cpp.o CMakeFiles/tool-help.dir/library.cpp.o CMakeFiles/tool-help.dir/menu.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libtool-help.a
