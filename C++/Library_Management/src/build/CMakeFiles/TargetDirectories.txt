@@ -1,0 +1,4 @@
+/Users/TranCuong/Projects/Library_Management/src/build/CMakeFiles/rebuild_cache.dir
+/Users/TranCuong/Projects/Library_Management/src/build/CMakeFiles/edit_cache.dir
+/Users/TranCuong/Projects/Library_Management/src/build/CMakeFiles/library.dir
+/Users/TranCuong/Projects/Library_Management/src/build/CMakeFiles/tool-help.dir
