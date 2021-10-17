@@ -1,14 +1,3 @@
-/**
- * Lead Author(s):
- * @author Cuong Tran
- * @author Nhat Le
- * 
- * Other contributors: none
- * 
- * Responsibilities of class: Creating a LogIn prompt GUI for user wit Password and username
- * 
- * 
- */
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
