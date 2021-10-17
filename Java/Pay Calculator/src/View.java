@@ -1,17 +1,3 @@
-/**
- * Lead Author(s):
- * @author Cuong Tran
- * @author Nhat Le
- * 
- * Other contributors:
- * None
- * 
- * Responsibilities of class: GUI, responsible for interactions with users 
- * Including actions Listener for Buttons. Methods to differentiate between intern and full-times.
- * The respected outcomes would be different depend on certain conditions
- * 
- */
-
 import java.awt.*;
 import java.awt.event.ActionListener;
 
