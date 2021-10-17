@@ -2,13 +2,13 @@ public class FullTime extends Employee implements CalculatePayAndTax
 {
 	private static boolean benefit = true;
 	private double workingHour = 0;
-    private double salary = 0;
-    private double salaryAfterTax = 0; 
-    private static double taxRate = 0.123;
-    private double tax;
-    private static double fullTimeRate = 35;
-    private double bonus = 0;
-    private double payAfterTax = 0;
+    	private double salary = 0;
+    	private double salaryAfterTax = 0; 
+    	private static double taxRate = 0.123;
+    	private double tax;
+    	private static double fullTimeRate = 35;
+   	 private double bonus = 0;
+    	private double payAfterTax = 0;
     
  
 	public FullTime(Information newInfo, double newHour)
