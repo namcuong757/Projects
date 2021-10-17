@@ -9,21 +9,18 @@ public class FullTime extends Employee implements CalculatePayAndTax
     	private static double fullTimeRate = 35;
    	 private double bonus = 0;
     	private double payAfterTax = 0;
-    
  
 	public FullTime(Information newInfo, double newHour)
 	{
 		super(newInfo);
 		workingHour = newHour;
 	}
-	
 	public void calculateBonus()
 	{
 		bonus = salaryAfterTax * 0.05;
 		bonus = Math.round(bonus*100);
 		bonus = bonus/100;
 	}
-	
 	public double getBonus()
 	{
 		return bonus;
@@ -79,10 +76,9 @@ public class FullTime extends Employee implements CalculatePayAndTax
 	@Override
 	public void calculatePayAfterTax()
 	{
-		payAfterTax = salary - tax;
-		
+		payAfterTax = salary - tax;	
 	}
-		@Override
+	@Override
 	public double getTaxDeduction()
 	{
 		return tax;
@@ -93,7 +89,8 @@ public class FullTime extends Employee implements CalculatePayAndTax
 		return salary;
 	}
 	@Override
-	public double getPayAfterTax() {
+	public double getPayAfterTax()
+	{
 		return payAfterTax;
 	}
 	
