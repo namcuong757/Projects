@@ -1,0 +1,19 @@
+-INFORMATION OF THE EMPLOYEE-
+Status: Full Time
+Benefit: TRUE
+Mentor: Off
+Name: Phong
+Address: 125
+Phone Number: 132
+Email: 132
+Employee ID: 1
+
+--PAY ROLL--
+Total Hour: 20.0
+Rate Of Pay: $35.00
+Tax Rate: $12.3%
+Pay Before Tax: $700.00
+Tax Deduction: $86.10
+Pay After Tax: $613.90
+Bonus: $30.70
+*Total Pay: $644.60
