@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libtool-help.a CMakeFiles/tool-help.dir/option.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libtool-help.a
