@@ -23,7 +23,7 @@ void admin_menu(vector<Item>& library, vector<Member>& patrons)
     cout << "\n1. ADD A NEW ITEM";
     cout << "\n2. ADD A NEW MEMBER";
     cout << "\n3. DISPLAY ALL ITEMS";
-    cout << "\n4. DISPLAU ALL MEMBERS";
+    cout << "\n4. DISPLAY ALL MEMBERS";
     cout << "\n5. CHECK OUT AN ITEM";
     cout << "\n6. RETURN AN ITEM";
     cout << "\n7. MAKE A PAYMENT";
@@ -76,12 +76,3 @@ void admin_menu(vector<Item>& library, vector<Member>& patrons)
     }
   }while(choice != 9);
 }
-void main_menu(vector<Item>& library, vector<Member>& patrons)
-{
-	string choice;
-	cout << "MAIN MENU\n";
-	cout << "1. Check out an Item\n";
-	cout << "2. Return an Item\n";
-	cout << "3. ADMISTRATION MENU\n";
-	
-}	

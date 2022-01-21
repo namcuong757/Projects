@@ -1,8 +1,7 @@
-#include "option.h"
+#include "game.h"
 
-int main(int num, char** agrv)
+int main(int num, char **agrv)
 {
-	option options;
-	options = get_option(num, agrv);
+	start_game(num, agrv);
 	return 0;
 }

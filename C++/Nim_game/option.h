@@ -6,7 +6,8 @@
 #include <iostream>
 using namespace std;
 
-struct option{
+struct option
+{
 	bool valid = true;
 	bool has_ai = false;
 	bool set_stones = false;
@@ -14,9 +15,8 @@ struct option{
 	int piles = 0;
 	int stones = 0;
 };
-string help(const char*);
-string usage(const char*);
-option get_option(int num, char** argv);
+string help(const char *);
+string usage(const char *);
+option get_option(int num, char **argv);
 
 #endif
-

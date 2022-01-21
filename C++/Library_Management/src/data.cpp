@@ -36,11 +36,11 @@ void items_printer(vector<Item> library)
     for(int i = 0; i < library.size(); ++i)
     {
       cout << endl;
-      cout << library[i].title << endl;
-      cout << library[i].author << endl;
-      cout << library[i].copyRightDate << endl;
-      cout << library[i].isbn << endl;
-      cout << library[i].numberOfCopies << endl;
+      cout << "Title: "           << library[i].title << endl;
+      cout << "Author: "          << library[i].author << endl;
+      cout << "Copy Right Date: " << library[i].copyRightDate << endl;
+      cout << "ISBN: "            << library[i].isbn << endl;
+      cout << "# Of Copies: "     << library[i].numberOfCopies << endl;
       if(library[i].available)
       {
         cout << "Not ready to check out" << endl;
@@ -63,10 +63,10 @@ void members_printer(vector<Member> members)
     for(int i = 0; i < members.size(); ++i)
     {
       cout << endl;
-      cout << members[i].name << endl;
-      cout << members[i].memberId << endl;
-      cout << "$" << members[i].feeOwed << endl;
-      cout << members[i].isbn_borrowed_book << endl;
+      cout << "Name: "               << members[i].name << endl;
+      cout << "ID: "                 <<members[i].memberId << endl;
+      cout << "Remaining Balance: $" << members[i].feeOwed << endl;
+      cout << "Borrowed Books: "     << members[i].isbn_borrowed_book << endl;
       if(members[i].waitList)
       {
         cout << "Wailisted" << endl;

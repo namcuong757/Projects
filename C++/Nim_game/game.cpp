@@ -1,18 +1,19 @@
 #include "option.h"
 #include <string>
-#include <iostrean>
+#include <iostream>
 #include <math.h>
 #include <vector>
 
 using namespace std;
 
-string get_name(string& prompt, string& input)
+string get_name(const string &prompt, string &input)
 {
-	while(true)
-	{  
-		cout << prompt << " ";
+	string temp = prompt;
+	while (true)
+	{
+		cout << temp << " ";
 		cin >> input;
-		if(input.length() <= 0 )
+		if (input.length() <= 0)
 		{
 			cin.clear();
 			cin.ignore();
@@ -20,41 +21,42 @@ string get_name(string& prompt, string& input)
 		}
 		else
 		{
-			prompt.append(input);
+			temp.append(input);
 			break;
-		}  
+		}
 	}
-	return prompt;	
+	return temp;
 }
 
 bool gameOver(vector<int> piles)
 {
-	for(int i = 0; i < piles.size(); i++)
+	for (int i = 0; i < piles.size(); i++)
 	{
-		if(piles[i] !=0){
+		if (piles[i] != 0)
+		{
 			return false;
 		}
 	}
 	return true;
 }
-void declareWinner (string whoseTurn)
+void declareWinner(string whoopturn)
 {
-	if(whoseTurn == "COMPUTER")
+	if (whoopturn == "COMPUTER")
 	{
 		cout << "\nCOMPUTER WON, YOU ARE WEAK\n\n";
 	}
 	else
 	{
-		cout << whoseTurn << " WON, NICE\n\n";
+		cout << whoopturn << " WON, NICE\n\n";
 	}
 	return;
 }
 void gameStatus(vector<int> piles)
 {
-	for( int i = 0; i < piles.size(); ++i)
+	for (int i = 0; i < piles.size(); ++i)
 	{
-		cout << "\nHeap" << i + 1 << " ["<< piles[i] << "] ";
-		for(int j = 0; j < piles[i]; ++j)
+		cout << "\nHeap" << i + 1 << " [" << piles[i] << "] ";
+		for (int j = 0; j < piles[i]; ++j)
 		{
 			cout << "*";
 		}
@@ -67,22 +69,23 @@ void manualPlayer(vector<int> &piles, const string &player)
 	struct option opt;
 	int heap = opt.piles;
 	int stones = opt.stones;
+	cout << endl;
 	cout << player << "'s turn\n";
-	if(piles.size() > 1)
+	if (piles.size() > 1)
 	{
 		cout << "\nWhich heap ? ";
 		cin >> heap;
-		while(!cin >> heap)
+		while (!cin >> heap)
 		{
 			cin.clear();
 			cout << "Invalid input. Try again with an integer";
 			cin.ignore();
 			cin >> heap;
 		}
-		while( heap < 0 || heap > piles.size())
+		while (heap < 0 || heap > piles.size())
 		{
 			cout << "In valid input. No heap exist\n";
-			cout << "Try agin: ";
+			cout << "Which heap ?  ";
 			cin >> heap;
 		}
 
@@ -94,30 +97,50 @@ void manualPlayer(vector<int> &piles, const string &player)
 	}
 	cout << "How many stones would you like to remove ? ";
 	cin >> stones;
-	while(!cin >> stones)
+	while (!cin >> stones)
 	{
 		cin.clear();
 		cout << "Invalid input. Try again with an integer";
 		cin.ignore();
 		cin >> stones;
 	}
-	if(piles[heap] >= stones && stones > 0)
+	while (piles[heap] < stones || stones < 0)
 	{
-		piles[heap] = piles[heap] - stones;
+		cin.clear();
+		cout << "Not enought stones. How many stones? ";
+		cin.ignore();
+		cin >> stones;
 	}
-	else
-	{cout << "Not enough stones. Try again \n";}
+	piles[heap] = piles[heap] - stones;
 	return;
 }
-void playGame(vector<int> piles, const string &player1,const string &player2, bool ai)
+void makeMove(vector<int> &piles)
+{
+	bool did_make_move = true;
+	int heap = 0;
+	int stones = 0;
+	cout << "BOT's turn\n";
+	while (did_make_move)
+	{
+		heap = rand() % piles.size();
+		stones = rand() % 100;
+		if (piles[heap] >= stones && stones > 0)
+		{
+			piles[heap] = piles[heap] - stones;
+			cout << "Bot took " << stones << " stones out of heap " << heap + 1 << endl;
+			did_make_move = false;
+		}
+	}
+}
+void playGame(vector<int> &piles, const string &player1, const string &player2, bool ai)
 {
 	string turn = player1;
-	while(gameOver(piles) == false)
+	while (gameOver(piles) == false)
 	{
 		gameStatus(piles);
-		if(ai)
+		if (ai)
 		{
-			if(turn == player1)
+			if (turn == player1)
 			{
 				manualPlayer(piles, player1);
 				turn = player2;
@@ -130,7 +153,7 @@ void playGame(vector<int> piles, const string &player1,const string &player2, bo
 		}
 		else
 		{
-			if(turn == player1)
+			if (turn == player1)
 			{
 				manualPlayer(piles, player1);
 				turn = player2;
@@ -141,15 +164,16 @@ void playGame(vector<int> piles, const string &player1,const string &player2, bo
 				turn = player1;
 			}
 		}
-		for(int i = 0; i < piles.size(); ++i)
+		for (int i = 0; i < piles.size(); ++i)
 		{
-			if(piles[i] == 0){
+			if (piles[i] == 0)
+			{
 				piles.erase(piles.begin() + i);
 			}
 		}
 	}
 
-	if(turn == player2)
+	if (turn == player2)
 	{
 		declareWinner(player1);
 	}
@@ -157,5 +181,58 @@ void playGame(vector<int> piles, const string &player1,const string &player2, bo
 	{
 		declareWinner(player2);
 	}
-	return;
+}
+void start_game(int num, char **arv)
+{
+	string in;
+	option opt;
+	do
+	{
+		string player1;
+		string player2;
+		opt = get_option(num, arv);
+		vector<int> piles;
+		int stones = opt.stones;
+		int pileNum = opt.piles;
+		if (opt.valid)
+		{
+			if (opt.set_piles)
+			{
+				piles.resize(pileNum);
+			}
+			if (opt.set_stones)
+			{
+				for (int i = 0; i < piles.size(); i++)
+				{
+					piles[i] = stones;
+				}
+			}
+			if (piles.empty())
+			{
+				int size = rand() % 10 + 1;
+				for (int i = 0; i < size; ++i)
+				{
+					int s = rand() % 10 + 1;
+					piles.push_back(s);
+				}
+			}
+			if (opt.has_ai)
+			{
+				cout << "-Computer play On-" << endl;
+				get_name("Player 1 name: ", player1);
+				//player2 = "bot";
+			}
+			else
+			{
+				get_name("PLAYER 1 NAME: ", player1);
+				get_name("PLAYER 2 name: ", player2);
+			}
+			playGame(piles, player1, player2, opt.has_ai);
+
+			cin.ignore();
+			cout << "WOULD YOU LIKE TO PLAY THIS AGAIN ? (Y/N)" << endl;
+			getline(cin, in);
+			cout << endl;
+		}
+	} while (toupper(in[0]) == 'Y' || toupper(in[0]) == 'y');
 }

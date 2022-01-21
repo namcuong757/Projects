@@ -6,10 +6,10 @@ int main()
 {
     vector<Item> library;
     vector<Member> patrons;
-    
+    items_printer(library);
     library = load_library_file("library.txt");
     patrons = load_member_file("patrons.txt");
 
-    menu(library, patrons);
+    admin_menu(library, patrons);
     return 0;
 }

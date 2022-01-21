@@ -1,4 +1,0 @@
-/Users/TranCuong/Projects/C++/Nim_game/build/CMakeFiles/rebuild_cache.dir
-/Users/TranCuong/Projects/C++/Nim_game/build/CMakeFiles/edit_cache.dir
-/Users/TranCuong/Projects/C++/Nim_game/build/CMakeFiles/nim-game.dir
-/Users/TranCuong/Projects/C++/Nim_game/build/CMakeFiles/tool-help.dir
