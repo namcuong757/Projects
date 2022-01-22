@@ -10,6 +10,6 @@ int main()
     library = load_library_file("library.txt");
     patrons = load_member_file("patrons.txt");
 
-    admin_menu(library, patrons);
+    menu(library, patrons);
     return 0;
 }

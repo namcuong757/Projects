@@ -10,6 +10,8 @@
 using namespace std;
 
 void create_files();
-void admin_menu(vector<Item>& library, vector<Member>& patrons);
+void admin_menu(vector<Item> &library, vector<Member> &patrons);
+bool log_in();
+void menu(vector<Item> &library, vector<Member> &patrons);
 
 #endif
