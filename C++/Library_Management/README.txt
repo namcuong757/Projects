@@ -8,7 +8,8 @@ When you first start the program.The library will be empty. However, after inter
 Note
 **
 You only have the option to return item in the first menu.
-More access provided after you log into the admin menu with your password.
+More access provided after you log into the admin menu with default password.
+Default password: password
 **
 
 Programmed by Nam Cuong Tran. 
