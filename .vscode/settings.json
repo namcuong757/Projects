@@ -4,5 +4,6 @@
         "vector": "cpp",
         "bitset": "cpp",
         "iostream": "cpp"
-    }
+    },
+    //"cmake.configureOnOpen": true
 }
