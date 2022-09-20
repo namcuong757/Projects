@@ -1,2 +1,4 @@
 # Projects
-Hey These are my personal projects in C++ and Java
+Programmed by Nam Cuong Tran
+Hey These are my personal projects in C++, Java and Python
+
