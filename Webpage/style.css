@@ -1,0 +1,129 @@
+/* Style sheet */
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+    padding-left: 2in;
+    background: linear-gradient(90deg, white 8in, rgb(224, 247, 255) 50%);
+}
+
+
+.left_split{
+    float:left;
+    border-bottom: 1px rgb(117, 114, 114) solid;
+    height: 6.5in;
+    width: 5in;
+}
+
+.right_split{
+    float:left;
+    position: relative;
+    bottom: 6.5in;
+    background-color:rgb(224, 247, 255);
+    border-left: 1px rgb(117, 114, 114) solid;
+    height: 10in;
+    margin-bottom: -9in; /* prevents empty space below */
+    width: 6in;
+    margin-left: 6in; /* space right split from the left */
+}
+
+#page_title{
+    text-align: center;
+    color:black;
+    font-size: 3em;
+    /* text-decoration: underline;  */
+}
+
+.input_section{
+    margin: auto;
+    border-top: 1px rgb(117, 114, 114) solid;
+    width: 5in;
+}
+
+input[type=text] {
+    font-size: 15px;
+    width: 2.47in;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px rgb(117, 114, 114) solid;
+    border-radius: 3px;
+  }
+
+  input[type=radio] {
+    font-size: 15px;
+    width: .5in;
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+.button {
+    display: block;
+    margin: auto;
+    background-color:rgb(224, 247, 255);
+    border: solid .5px;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: .25in;
+    margin-left:4in;
+  }
+
+  .button:hover{
+    background-color:rgb(237, 125, 228);
+  }
+
+  table td{
+    text-align: center;
+    width: 2in;
+    border: 1px black solid;
+    font-size: 25px;
+  }
+
+  .summary_item{
+    margin-left: 1in;
+  }
+  
+  .summary_section{
+    margin: auto;
+    border-bottom: 1px rgb(117, 114, 114) solid;
+    width: 5in;
+    margin-top: 25px;
+}
+
+.information_holder{
+    border: 1px black solid;
+    border-radius: 3px;
+}
+
+.information{
+    font-size: 18px;
+    margin-left: .5in;
+    /* border-bottom: 1px rgb(117, 114, 114) solid; */
+    /* width: 4in; */
+}
+
+#payment_total_text{
+    position:relative;
+    margin-left: 5px;
+    font-size: 25px;
+}
+#discount_price{
+  position:relative;
+  margin-left: 5px;
+  font-size: 25px;
+}
+#payment_total{
+    position:relative;
+    margin-left: 5px;
+    font-size: 25px;
+}
+
