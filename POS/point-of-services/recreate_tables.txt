@@ -1,0 +1,71 @@
+psql -a -U postgres mydb -p 5432 -h localhost
+
+mypassword
+
+CREATE DATABASE posdb;
+
+\c posdb
+
+CREATE EXTENSION citext;
+
+CREATE SCHEMA IF NOT EXISTS pos_schema;
+
+drop table pos_schema.customer;
+
+CREATE TABLE pos_schema.customer
+(
+    phone character(10) COLLATE pg_catalog."default",
+    name character varying COLLATE pg_catalog."default",
+    address character varying COLLATE pg_catalog."default",
+    zip character(5) COLLATE pg_catalog."default",
+    CONSTRAINT unique_phone UNIQUE (phone),
+    CONSTRAINT phone_only_nums CHECK (phone ~ '[0-9]{10}'::text),
+    CONSTRAINT zip_only_nums CHECK (zip ~ '[0-9]{5}'::text)
+);
+
+drop table pos_schema.item;
+
+CREATE TABLE pos_schema.item
+(
+    sku integer NOT NULL DEFAULT 10000000,
+    qty integer NOT NULL,
+    cents integer,
+    name citext COLLATE pg_catalog."default",
+    CONSTRAINT item_pkey PRIMARY KEY (sku),
+    CONSTRAINT unique_name UNIQUE (name),
+    CONSTRAINT limitsku CHECK (sku >= 10000000 AND sku <= 99999999),
+    CONSTRAINT posqty CHECK (qty >= 0)
+);
+
+drop table pos_schema.register;
+
+CREATE TABLE pos_schema.register
+(
+    id numeric(3,0) NOT NULL,
+    cash integer,
+    CONSTRAINT register_pkey PRIMARY KEY (id),
+    CONSTRAINT limit_id CHECK (id >= 0::numeric),
+    CONSTRAINT limit_cash CHECK (cash >= 0)
+);
+
+drop table pos_schema.transaction;
+
+CREATE TABLE pos_schema.transaction
+(
+    id integer NOT NULL DEFAULT 1,
+    date date NOT NULL,
+    "time" time with time zone NOT NULL,
+    customer_phone character(10) COLLATE pg_catalog."default",
+    total_price integer DEFAULT 0,
+    items character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    payment_type character(4) COLLATE pg_catalog."default" DEFAULT 'cash'::bpchar,
+    tender integer DEFAULT 0,
+    change integer DEFAULT 0,
+    card_number character varying COLLATE pg_catalog."default",
+    card_exp character varying COLLATE pg_catalog."default",
+    card_cvv character varying COLLATE pg_catalog."default",
+    CONSTRAINT transaction_pkey PRIMARY KEY (id, date),
+    CONSTRAINT limit_change CHECK (change >= 0)
+);
+
+\q
