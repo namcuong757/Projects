@@ -1,0 +1,5 @@
+Add functionality to itemmanager.cpp so that you can click on the labels for quantity and cents.
+When clicking on them, they switch between text that reads "Quantity" and "Quantity (at least)" and "Quantity (at most)" and all the same for cents.
+Then when you type in the LineEdits next to them, the results are filtered so that the tableview shows records with that exact qty/price, at least that qty/price, or at most that qty/price.
+
+
